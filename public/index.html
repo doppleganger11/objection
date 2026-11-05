@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Objection!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/vendor/ag-grid-community.min.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Objection!</h1>
+      <p>Rehearse your dispute before you answer it.</p>
+    </div>
+    <div class="badges" id="badges"></div>
+  </header>
+
+  <main>
+    <section aria-labelledby="docket-title">
+      <h2 id="docket-title">Your open disputes</h2>
+      <div id="docket" class="ag-theme-quartz docket"></div>
+    </section>
+
+    <div id="case" hidden>
+      <section class="case-head">
+        <div>
+          <p class="eyebrow" id="c-reason"></p>
+          <h2 id="c-item"></h2>
+          <p class="claim" id="c-claim"></p>
+        </div>
+        <dl class="facts">
+          <div><dt>At stake</dt><dd id="c-amount"></dd></div>
+          <div><dt>Respond in</dt><dd id="c-due"></dd></div>
+          <div><dt>Stage</dt><dd id="c-stage"></dd></div>
+        </dl>
+      </section>
+
+      <div class="grid">
+        <section class="panel">
+          <h3>1. Evidence locker</h3>
+          <div class="meter" role="img" id="meter-wrap"><span id="meter"></span></div>
+          <p class="meter-label" id="meter-label"></p>
+          <ul class="checks" id="checks"></ul>
+          <div class="two" id="tracking-fields">
+            <label class="field">Carrier
+              <select id="carrier">
+                <option value="USPS">USPS</option><option value="UPS">UPS</option>
+                <option value="FEDEX">FedEx</option><option value="DHL">DHL</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </label>
+            <label class="field">Tracking number
+              <input id="tracking-number" maxlength="64" autocomplete="off">
+            </label>
+          </div>
+          <label class="field">What happened, in your words
+            <textarea id="facts" rows="4" maxlength="2000"></textarea>
+          </label>
+        </section>
+
+        <section class="panel">
+          <div class="row">
+            <h3>2. Practice hearing</h3>
+            <button id="hear" class="primary">Start the hearing</button>
+          </div>
+          <ol class="transcript" id="transcript"></ol>
+          <div class="verdict" id="verdict" hidden></div>
+        </section>
+      </div>
+
+      <section class="panel">
+        <h3>3. What each choice is likely to cost you</h3>
+        <div id="options" class="options"></div>
+        <p class="fine">Estimates, not a promise or legal advice. Based on the evidence above and the assumptions in the README.</p>
+      </section>
+
+      <section class="panel" id="file-panel">
+        <h3>4. Review and file</h3>
+        <p class="filing-summary" id="filing-summary"></p>
+        <label class="field">Note to PayPal
+          <textarea id="note" rows="5" maxlength="2000" placeholder="Run the hearing to draft this, or write your own."></textarea>
+        </label>
+        <button id="file" class="primary">File with PayPal</button>
+        <div id="filed" class="filed" hidden></div>
+      </section>
+
+      <section class="panel">
+        <h3>PayPal activity</h3>
+        <ul class="activity" id="activity"></ul>
+      </section>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
