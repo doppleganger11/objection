@@ -1,14 +1,14 @@
 # Render blueprint. Set the secret values in the Render dashboard, never here.
+# The hosted demo uses the labelled fictional cases, so judges can replay them.
 services:
   - type: web
     name: objection
     runtime: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - { key: NODE_VERSION, value: 24.14.1 }
       - { key: USE_SIMULATED_PAYPAL, value: "true" }
       - { key: GEMINI_MODEL, value: gemini-3.5-flash }
-      - { key: PAYPAL_CLIENT_ID, sync: false }
-      - { key: PAYPAL_CLIENT_SECRET, sync: false }
       - { key: GEMINI_API_KEY, sync: false }
