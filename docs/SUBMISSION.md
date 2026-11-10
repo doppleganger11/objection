@@ -4,6 +4,12 @@
 
 **Tagline:** Rehearse your PayPal dispute before you answer it.
 
+**Demo:** https://objection-7zpy.onrender.com
+
+**Code:** https://github.com/doppleganger11/objection
+
+Note for judges: The free server sleeps when unused, so the first visit can take about a minute to load.
+
 ## Inspiration
 
 Sellers on forums keep describing the same moment: a dispute arrives, a deadline starts, and they can't tell whether the case is winnable. Large merchants have dispute teams. A person selling from a kitchen table has a form.

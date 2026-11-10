@@ -6,6 +6,10 @@ A small seller gets a dispute, a deadline and little guidance. Objection! lets t
 
 Sometimes the right answer is not to fight. The app says so.
 
+**Live demo:** https://objection-7zpy.onrender.com
+
+The live demo uses fictional cases labelled **Simulated PayPal**, so anyone can replay them with **Reset demo**. The hearing is real Gemini output. The free server sleeps when unused, so the first visit can take about a minute to load.
+
 ## What it does
 
 1. **Case list:** reads open disputes from the PayPal Disputes API.
